@@ -13,7 +13,7 @@ const projects = [
   },
   {
     id: "02",
-    category: "research ai",
+    category: "research",
     tag: "Nghiên cứu",
     title: "Tìm kiếm và đánh giá thông tin học thuật",
     desc: "Tìm hiểu chủ đề Federated Learning và quyền riêng tư dữ liệu, sử dụng nguồn học thuật để phân tích cách mô hình AI có thể học mà không cần tập trung dữ liệu cá nhân.",
@@ -22,7 +22,7 @@ const projects = [
   },
   {
     id: "03",
-    category: "ai research",
+    category: "prompt",
     tag: "Prompt",
     title: "Viết prompt hiệu quả cho tác vụ học tập",
     desc: "So sánh prompt ban đầu, prompt cải tiến và kết quả đầu ra từ AI cho các tác vụ như tóm tắt tài liệu, giải thích khái niệm và tạo câu hỏi ôn tập.",
@@ -40,7 +40,7 @@ const projects = [
   },
   {
     id: "05",
-    category: "ai",
+    category: "creative",
     tag: "Sáng tạo",
     title: "Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung",
     desc: "Xây dựng bài viết và infographic 'Sống Xanh cùng Gen Z' bằng quy trình kết hợp AI tạo văn bản, AI tạo hình ảnh và công cụ thiết kế.",
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     id: "06",
-    category: "ai research",
+    category: "ethics",
     tag: "Đạo đức",
     title: "Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
     desc: "Phân tích chính sách sử dụng AI trong môi trường đại học, ghi lại nhật ký prompt và xây dựng quan điểm cá nhân về minh bạch, liêm chính và năng lực thực chất.",
@@ -71,18 +71,30 @@ export default function Projects({ onOpenPdf }) {
       </div>
 
       <div className={styles.filterTabs} role="tablist" aria-label="Lọc dự án theo kỹ năng">
-        {['all', 'ai', 'research', 'collab', 'system'].map(f => (
-          <button 
-            key={f}
-            className={`${styles.filterTab} ${filter === f ? styles.active : ''}`} 
-            onClick={() => setFilter(f)}
-            type="button" 
-            role="tab" 
-            aria-selected={filter === f}
-          >
-            {f === 'all' ? 'Tất cả' : f === 'ai' ? 'AI' : f === 'research' ? 'Nghiên cứu' : f === 'collab' ? 'Hợp tác' : 'Hệ thống'}
-          </button>
-        ))}
+        {['all', 'system', 'research', 'prompt', 'collab', 'creative', 'ethics'].map(f => {
+          const tabLabels = {
+            'all': 'Tất cả',
+            'system': 'Hệ thống',
+            'research': 'Nghiên cứu',
+            'prompt': 'Prompt',
+            'collab': 'Hợp tác',
+            'creative': 'Sáng tạo',
+            'ethics': 'Đạo đức'
+          };
+          
+          return (
+            <button 
+              key={f}
+              className={`${styles.filterTab} ${filter === f ? styles.active : ''}`} 
+              onClick={() => setFilter(f)}
+              type="button" 
+              role="tab" 
+              aria-selected={filter === f}
+            >
+              {tabLabels[f]}
+            </button>
+          );
+        })}
       </div>
 
       <div className={styles.projectGrid}>

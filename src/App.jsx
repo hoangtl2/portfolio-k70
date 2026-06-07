@@ -25,7 +25,7 @@ function App() {
     <>
       <Header />
       <main id="top">
-        <Hero avatarUrl="/avatar.png" />
+        <Hero avatarUrl={`${import.meta.env.BASE_URL}avatar.png`} />
         <Projects onOpenPdf={handleOpenPdf} />
         <Process />
         <Reflection />
