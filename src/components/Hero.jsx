@@ -32,14 +32,6 @@ export default function Hero({ avatarUrl }) {
             Công nghệ - ĐHQGHN. Với niềm đam mê khám phá thế giới số và mong muốn tạo ra những sản phẩm
             phần mềm đột phá, tôi luôn không ngừng học hỏi và rèn luyện mỗi ngày.
           </p>
-          <div className={styles.introDivider}></div>
-          <h3>Sở thích cá nhân</h3>
-          <div className={styles.hobbyGrid}>
-            <span>Game</span>
-            <span>Code</span>
-            <span>Ăn</span>
-            <span>Ngủ</span>
-          </div>
         </article>
 
         <article className="gl-card">
@@ -48,13 +40,13 @@ export default function Hero({ avatarUrl }) {
           </div>
           <h2>Định hướng phát triển</h2>
           <p>
-            • Nắm vững các nền tảng kỹ thuật về cấu trúc dữ liệu, thuật toán và thiết kế kiến trúc phần mềm chuyên sâu.
+            • Nghiên cứu chuyên sâu về An toàn thông tin, phân tích lỗ hổng bảo mật và các kỹ thuật tấn công/phòng thủ mạng.
           </p>
           <p>
-            • Khám phá tiềm năng của Trí tuệ nhân tạo (AI) và cách tích hợp AI vào việc tự động hóa, nâng cao trải nghiệm người dùng.
+            • Xây dựng và triển khai các hệ thống bảo mật an toàn, ứng dụng mật mã học để bảo vệ dữ liệu người dùng và hệ thống doanh nghiệp.
           </p>
           <p>
-            • Xây dựng bộ kỹ năng mềm toàn diện: tư duy phản biện, làm việc nhóm và năng lực giải quyết vấn đề thực tế.
+            • Rèn luyện tư duy đánh giá bảo mật (Penetration Testing), dịch ngược phần mềm và tích cực tham gia các giải đấu thực chiến CTF (Capture The Flag).
           </p>
         </article>
 
