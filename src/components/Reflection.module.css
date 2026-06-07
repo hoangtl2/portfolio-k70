@@ -1,0 +1,13 @@
+.sectionHeading {
+  margin-bottom: 3rem;
+}
+
+.reflectionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.reflectionGrid article h3 {
+  margin-bottom: 1rem;
+}

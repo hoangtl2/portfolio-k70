@@ -1,0 +1,128 @@
+.sectionHeading {
+  margin-bottom: 3rem;
+}
+
+.filterTabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterTab {
+  background: var(--gl-glass-bg);
+  border: 1px solid var(--gl-glass-border);
+  color: var(--muted);
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.filterTab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.filterTab.active {
+  background: linear-gradient(135deg, var(--gl-accent), var(--gl-cyan));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gl-glass-border);
+  padding-bottom: 1rem;
+}
+
+.projectNumber {
+  color: var(--gl-accent-light);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.projectTag {
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--gl-cyan);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.projectTitle {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.projectPoints {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.projectPoints li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.projectPoints li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gl-accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.projectActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.btnAction {
+  background: var(--gl-glass-bg);
+  border: 1px solid var(--gl-glass-border);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 12px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btnAction:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--gl-cyan);
+  color: var(--gl-cyan);
+}

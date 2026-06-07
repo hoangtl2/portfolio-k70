@@ -1,0 +1,95 @@
+.pdfModal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(15, 17, 21, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 3vh 3vw;
+  display: flex;
+}
+
+.pdfDialog {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  height: 90%;
+  background: var(--gl-glass-bg);
+  border: 1px solid var(--gl-glass-border);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pdfHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--gl-glass-border);
+}
+
+.pdfHeader h2 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.pdfClose {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  border: 1px solid var(--gl-glass-border);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: grid;
+  place-items: center;
+}
+
+.pdfClose:hover {
+  background: rgba(255, 0, 60, 0.1);
+  color: #ff003c;
+  border-color: #ff003c;
+}
+
+.pdfContent {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.pdfIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+.mockText {
+  color: var(--muted);
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .pdfModal {
+    padding: 0;
+  }
+  .pdfDialog {
+    border-radius: 0;
+    border: none;
+    height: 100%;
+  }
+}
