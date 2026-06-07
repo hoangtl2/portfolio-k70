@@ -21,7 +21,7 @@ export default function PdfModal({ isOpen, onClose, title, file }) {
         </div>
         <div className={styles.pdfContent}>
           {file ? (
-            <iframe src={`/${file}`} title={title} className={styles.pdfIframe} />
+            <iframe src={`${import.meta.env.BASE_URL}${file}`} title={title} className={styles.pdfIframe} />
           ) : (
             <p className={styles.mockText}>
               Bản xem trước tài liệu <strong>{title}</strong> không có sẵn vì chưa có file PDF thật.<br/><br/>
