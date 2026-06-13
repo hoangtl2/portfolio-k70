@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './Projects.module.css';
+import TiltCard from './TiltCard';
 
 const projects = [
   {
@@ -99,7 +100,7 @@ export default function Projects({ onOpenPdf }) {
 
       <div className={styles.projectGrid}>
         {filteredProjects.map(p => (
-          <article key={p.id} className={`gl-card ${styles.projectCard}`}>
+          <TiltCard key={p.id} className={`gl-card ${styles.projectCard}`} delay={0.1}>
             <div className={styles.projectTop}>
               <span className={styles.projectNumber}>{p.id}</span>
               <span className={styles.projectTag}>{p.tag}</span>
@@ -114,7 +115,7 @@ export default function Projects({ onOpenPdf }) {
                 Xem PDF
               </button>
             </div>
-          </article>
+          </TiltCard>
         ))}
       </div>
     </section>

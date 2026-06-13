@@ -1,4 +1,5 @@
 import styles from './Hero.module.css';
+import TiltCard from './TiltCard';
 
 export default function Hero({ avatarUrl }) {
   return (
@@ -22,7 +23,7 @@ export default function Hero({ avatarUrl }) {
       </div>
 
       <div className={styles.introCardGrid} aria-label="Thông tin mở đầu portfolio">
-        <article className="gl-card">
+        <TiltCard className="gl-card">
           <div className={styles.introIcon} aria-hidden="true">
             ✦
           </div>
@@ -32,9 +33,9 @@ export default function Hero({ avatarUrl }) {
             Công nghệ - ĐHQGHN. Với niềm đam mê khám phá thế giới số và mong muốn tạo ra những sản phẩm
             phần mềm đột phá, tôi luôn không ngừng học hỏi và rèn luyện mỗi ngày.
           </p>
-        </article>
+        </TiltCard>
 
-        <article className="gl-card">
+        <TiltCard className="gl-card">
           <div className={styles.introIcon} aria-hidden="true">
             ◈
           </div>
@@ -48,9 +49,9 @@ export default function Hero({ avatarUrl }) {
           <p>
             • Rèn luyện tư duy đánh giá bảo mật (Penetration Testing), dịch ngược phần mềm và tích cực tham gia các giải đấu thực chiến CTF (Capture The Flag).
           </p>
-        </article>
+        </TiltCard>
 
-        <article className="gl-card">
+        <TiltCard className="gl-card">
           <div className={styles.introIcon} aria-hidden="true">
             ✧
           </div>
@@ -60,7 +61,7 @@ export default function Hero({ avatarUrl }) {
             Mỗi dự án tại đây đại diện cho những nỗ lực trong việc tìm kiếm, phân tích thông tin, 
             ứng dụng AI một cách có đạo đức và hợp tác hiệu quả trong không gian mạng.
           </p>
-        </article>
+        </TiltCard>
       </div>
     </section>
   );

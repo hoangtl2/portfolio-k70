@@ -5,6 +5,8 @@ import Projects from './components/Projects'
 import Process from './components/Process'
 import Reflection from './components/Reflection'
 import PdfModal from './components/PdfModal'
+import CustomCursor from './components/CustomCursor'
+import Particles from './components/Particles'
 import './index.css'
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
 
   return (
     <>
+      <CustomCursor />
+      <Particles />
       <Header />
       <main id="top">
         <Hero avatarUrl={`${import.meta.env.BASE_URL}avatar.jpg`} />

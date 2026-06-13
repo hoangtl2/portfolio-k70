@@ -146,3 +146,12 @@ a:hover {
   66% { transform: translate(-20px, 20px) scale(0.9); }
   100% { transform: translate(0, 0) scale(1); }
 }
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"], .gl-card {
+    cursor: none !important;
+  }
+}
