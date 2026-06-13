@@ -1,13 +1,268 @@
 .sectionHeading {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
-.reflectionGrid {
+/* Tabs */
+.tabContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tabList {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  background: rgba(15, 17, 21, 0.4);
+  padding: 0.5rem;
+  border-radius: 100px;
+  border: 1px solid var(--gl-glass-border);
+  backdrop-filter: blur(10px);
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.tabButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1;
+}
+
+.tabButton:hover {
+  color: var(--gl-text);
+}
+
+.activeTab {
+  color: var(--gl-cyan) !important;
+}
+
+.activeIndicator {
+  position: absolute;
+  inset: 0;
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  border-radius: 100px;
+  z-index: -1;
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.1);
+}
+
+.tabContent {
+  min-height: 400px;
+}
+
+/* Timeline (Journey) */
+.timelineContainer {
+  position: relative;
+  padding-left: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gl-cyan), transparent);
+  opacity: 0.3;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -2.6rem;
+  top: 1.2rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gl-bg);
+  border: 2px solid var(--gl-cyan);
+  color: var(--gl-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.4);
+}
+
+.timelineCard {
+  padding: 1.5rem;
+}
+
+.timelineCard h3 {
+  margin-bottom: 0.75rem;
+  color: var(--gl-text);
+  font-size: 1.2rem;
+}
+
+.timelineCard p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Skills Grid */
+.skillsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
-.reflectionGrid article h3 {
+.skillCard {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
+}
+
+.skillTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skillTitle h4 {
+  font-size: 1.1rem;
+}
+
+.skillPercent {
+  font-weight: 700;
+  color: var(--gl-cyan);
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.progressBar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gl-purple), var(--gl-cyan));
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.5);
+}
+
+.skillDesc {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.skillSummary {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.skillSummary strong {
+  color: var(--gl-cyan);
+}
+
+/* Bento Grid (Highlights & Challenges) */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.bentoCard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.bentoCard:hover {
+  transform: translateY(-5px);
+}
+
+.bentoIcon {
+  margin-bottom: 1.5rem;
+  color: var(--gl-cyan);
+}
+
+.bentoCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.bentoCard p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.bentoCard p strong {
+  color: var(--gl-text);
+  border-bottom: 1px solid var(--gl-cyan);
+}
+
+.highlightBento::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -50%; width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.1) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.challengeBento {
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.challengeBento .bentoIcon {
+  color: #ef4444; /* Red color for challenge */
+}
+
+.challengeBento::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.05) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .tabList {
+    flex-wrap: wrap;
+    border-radius: 12px;
+  }
+  .tabButton {
+    flex: 1 1 calc(50% - 1rem);
+    justify-content: center;
+  }
+  .skillsGrid, .bentoGrid {
+    grid-template-columns: 1fr;
+  }
 }
